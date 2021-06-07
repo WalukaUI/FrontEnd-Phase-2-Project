@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Head from "./components/Head/Head"
+import NavBar from "./components/NavBar/NavBar"
 
 
 function App() {
@@ -24,6 +25,7 @@ const all=product.map((e)=>{
 })
 
 return (<div className="app">
+    <NavBar />
     {all}
   </div>
 )

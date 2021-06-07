@@ -16,10 +16,10 @@ function Head({ produc }) {
   {produc.product_name}
   </div>
   <div className="card-body">
-    <img src={produc.product_image} />
+    <img src={produc.product_image} alt="product"/>
     <h5 className="card-title">Quantity: {produc.quantity}</h5>
     <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" className="btn btn-danger">Remove</a>
+    <button className="btn btn-danger">Remove</button>
     <div className="rigtBox">
     <a href="#" className="btn btn-warning">Out Of Stock</a>
     </div>

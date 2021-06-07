@@ -1,0 +1,18 @@
+h1{
+  color: rgb(68, 77, 77);  
+}
+.card{
+  margin: 20px;
+  width: 65%;
+}
+.card-body{
+  background-color: rgb(247, 251, 252);
+}
+.rigtBox{
+  float: right;
+}
+img{
+  width: 200px;
+  float: left;
+  padding-right: 20px;
+}

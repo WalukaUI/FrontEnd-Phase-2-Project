@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Head from "./head/Head"
+import Head from "./components/Head/Head"
 
 
 function App() {

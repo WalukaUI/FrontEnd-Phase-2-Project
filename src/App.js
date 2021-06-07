@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Head from "./components/Head/Head"
 import NavBar from "./components/NavBar/NavBar"
+import Form from "./components/Form/Form"
 
 
 function App() {
@@ -26,6 +27,7 @@ const all=product.map((e)=>{
 
 return (<div className="app">
     <NavBar />
+    <Form/>
     {all}
   </div>
 )

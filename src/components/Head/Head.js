@@ -2,15 +2,6 @@ import "../Head/stylingHead.css"
 function Head({ produc }) {
     
     return <>
-
-{/* <div className="card">
-<h1>Quantity:{produc.quantity}</h1>
-<p></p>
-<button>Remove</button>
-<button>Edit</button>
-<img src={produc.product_image} />
-</div> */}
-
 <div className="card">
   <div className="card-header">
   {produc.product_name}

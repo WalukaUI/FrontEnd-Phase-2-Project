@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import Head from "./head/Head"
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [product, setProduct] = useState([])
+  useEffect(() => {
+    fetch(`http://localhost:3000/products`, {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        //const slicer = json.slice(0, 100)
+        setProduct(json)
+      })
+  }, [])
+const all=product.map((e)=>{
+  return <Head key={e.product_id} produc={e} />
+})
+
+return (<div className="app">
+    {all}
+  </div>
+)
 }
 
 export default App;

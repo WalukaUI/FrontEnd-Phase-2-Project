@@ -45,7 +45,7 @@ function Product({ product, removefromStock, changeAvailability }) {
       </div>
       </div>
 
-   <PopUp trigger={isOpen}>
+   <PopUp trigger={isOpen} togglePopup={togglePopup}>
 
    </PopUp>
 

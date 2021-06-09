@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PopUp from '../Product/PopUp';
 import "./stylingHead.css"
 
-function Product({ product, removefromStock, changeAvailability }) {
+function Product({ product, removefromStock, changeAvailability, updateOldProduct }) {
   const [isOpen, setIsOpen] = useState(false);
   const [updateData,setUpdateData]=useState(null)
 
@@ -47,9 +47,16 @@ function Product({ product, removefromStock, changeAvailability }) {
       </div>
       </div>
 
-   <PopUp trigger={isOpen} togglePopup={togglePopup} product={product} updateData={updateData}setUpdateData={setUpdateData}>
+   <PopUp 
+   trigger={isOpen} 
+   togglePopup={togglePopup} 
+   product={product} 
+   updateData={updateData}
+   setUpdateData={setUpdateData}
+   updateOldProduct={updateOldProduct}
+   />
 
-   </PopUp>
+ 
 
     
   </>

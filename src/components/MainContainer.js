@@ -57,13 +57,31 @@ function Main() {
        setProduct([...newarray,j]);
       })
   }
-
+function updateOldProduct(item){
+  const postrequestOptions = {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(item)
+  }
+  fetch(`${URL}/${item.id}`, postrequestOptions)
+    .then(r => r.json())
+    .then(j => {
+      console.log(j)
+      //let newarray=product.filter((e)=>e.id!==item.id)
+     //setProduct([...newarray,j]);
+    })
+}
   return (
     <div className="app">
       <NavBar />
       <div className="row">
         <div className="col-8 ">
-          <AllProducts product={product} removefromStock={removefromStock} changeAvailability={markasOutofStock} />
+          <AllProducts 
+          product={product} 
+          removefromStock={removefromStock} 
+          changeAvailability={markasOutofStock} 
+          updateOldProduct={updateOldProduct}
+          />
         </div>
         <div className="col-4 l-0">
           <Form createNewProduct={createNewProduct} />

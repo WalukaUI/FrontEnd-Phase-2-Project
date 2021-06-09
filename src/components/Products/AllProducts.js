@@ -2,12 +2,18 @@ import { useState } from "react";
 import "../Products/allProducts.css"
 import Product from "./Product/Product"
 
-function AllProducts({ product, removefromStock, changeAvailability }) {
+function AllProducts({ product, removefromStock, changeAvailability, updateOldProduct }) {
   const [productIndex, setproductIndex] = useState(0);
 
   const productComponents = product
     .slice(productIndex, productIndex + 3)
-    .map((e) => <Product key={e.id} product={e} removefromStock={removefromStock} changeAvailability={changeAvailability}/>)
+    .map((e) => <Product 
+    key={e.id} 
+    product={e} 
+    removefromStock={removefromStock} 
+    changeAvailability={changeAvailability}
+    updateOldProduct={updateOldProduct}
+    />)
 
   function handleNextClickNext() {
     productIndex===product.length-3?alert("No more products"):setproductIndex((productIndx) => productIndx + 3)

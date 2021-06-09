@@ -12,6 +12,7 @@ function PopUp({trigger, product, togglePopup}) {
  })
 
  function handleChangeData(e) {
+     console.log(e.target.value);
     e.preventDefault()
     let newData = { ...updateData, [e.target.name]: e.target.value }
     setUpdateData(newData);

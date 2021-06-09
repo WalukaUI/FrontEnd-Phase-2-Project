@@ -9,6 +9,10 @@ function PopUp({ trigger, togglePopup, updateData, setUpdateData }) {
         let newData = { ...updateData, [e.target.name]: e.target.value }
         setUpdateData(newData)
     }
+    function updateproduct(e){
+        e.preventDefault()
+        console.log(updateData);
+    }
     if (!updateData) return null
     const editProduct = updateData
 
@@ -16,7 +20,7 @@ function PopUp({ trigger, togglePopup, updateData, setUpdateData }) {
         <div className="popup-box" >
             <div className="popup-inner">
                 <div className="formDiv div1">
-                    <form >
+                    <form onSubmit={(e)=>updateproduct(e)}>
                         <h4>Update Product</h4>
                         <div className="form-group row">
                             <label >Product Name<input name="product_name" className="form-control form-control-sm" value={editProduct.product_name} placeholder="Name" onChange={handleChangeData} /></label>
@@ -35,10 +39,10 @@ function PopUp({ trigger, togglePopup, updateData, setUpdateData }) {
                             <div className="container">
                                 <div className="row">
                                     <div className="col-sm">
-                                        <button className=" btn btn-success" onClick={() => togglePopup()}>Update Product</button>
+                                        <button className=" btn btn-success"  type="submit">Update Product</button>
                                     </div>
                                     <div className="col-sm">
-                                        <button className="btn btn-danger" type="submit">Cancel</button>
+                                        <button className="btn btn-danger" onClick={(e) => togglePopup(e)}>Cancel</button>
                                     </div>
                                     <div className="col-sm">
                                     </div>

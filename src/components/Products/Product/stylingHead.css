@@ -3,7 +3,6 @@ h1{
 }
 .card{
   margin: 20px;
-  width: 65%;
 }
 .card-body{
   background-color: rgb(247, 251, 252);
@@ -15,4 +14,11 @@ img{
   width: 200px;
   float: left;
   padding-right: 20px;
+}
+.disable{
+  opacity: 0.5;
+  background: #CCC;
+}
+.hide{
+  display: none;
 }

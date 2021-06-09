@@ -1,36 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import Head from "./components/Head/Head"
-import NavBar from "./components/NavBar/NavBar"
-import Form from "./components/Form/Form"
-
+import React from "react"
+import Main from "./components/MainContainer"
 
 function App() {
-  const [product, setProduct] = useState([])
-  useEffect(() => {
-    fetch(`http://localhost:3000/products`, {
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      }
-    })
-      .then(res => res.json())
-      .then(json => {
-        console.log(json);
-        //const slicer = json.slice(0, 100)
-        setProduct(json)
-      })
-  }, [])
-const all=product.map((e)=>{
-  return <Head key={e.product_id} produc={e} />
-})
 
-return (<div className="app">
-    <NavBar />
-    <Form/>
-    {all}
-  </div>
-)
+
+  return (
+      <Main />
+  )
 }
 
 export default App;

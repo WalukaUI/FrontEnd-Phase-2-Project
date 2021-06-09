@@ -11,7 +11,7 @@ function PopUp({ trigger, togglePopup, updateData, setUpdateData,updateOldProduc
     }
     function updateproduct(e){
         e.preventDefault()
-        updateOldProduct(updateData);
+        updateOldProduct(updateData)
     }
     if (!updateData) return null
     const editProduct = updateData

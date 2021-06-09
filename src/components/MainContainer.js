@@ -14,7 +14,10 @@ function Main() {
     }
     fetch(URL, getrequestOptions)
       .then(res => res.json())
-      .then(json => setProduct(json))
+      .then(json => {
+        let sorted = json.sort((a, b) => a.id - b.id)
+        setProduct(sorted)
+      })
   }, [])
 
   function createNewProduct(data) {
@@ -28,7 +31,11 @@ function Main() {
     }
     fetch(URL, postrequestOptions)
       .then(r => r.json())
-      .then(j => setProduct([...product, j]))
+      .then(j => {
+        let beforeSort = ([...product, j])
+        let sorted = beforeSort.sort((a, b) => a.id - b.id)
+        setProduct(sorted)
+      })
   }
 
   function removefromStock(item) {
@@ -53,34 +60,40 @@ function Main() {
     fetch(`${URL}/${item.id}`, postrequestOptions)
       .then(r => r.json())
       .then(j => {
-        let newarray=product.filter((e)=>e.id!==item.id)
-       setProduct([...newarray,j]);
+        let newarray = product.filter((e) => e.id !== item.id)
+        let beforeSort = ([...newarray, j])
+        let sorted = beforeSort.sort((a, b) => a.id - b.id)
+        setProduct(sorted)
       })
   }
-function updateOldProduct(item){
-  const postrequestOptions = {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(item)
+  function updateOldProduct(updates) {
+    let quantity = parseInt(updates.product_stock)
+    let isInMarket = quantity > 0 ? true : false
+    let submittedData = { ...updates, isInMarket }
+    const postrequestOptions = {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(submittedData)
+    }
+    fetch(`${URL}/${updates.id}`, postrequestOptions)
+      .then(r => r.json())
+      .then(j => {
+        let newarray = product.filter((e) => e.id !== updates.id)
+        let beforeSort = ([...newarray, j])
+        let sorted = beforeSort.sort((a, b) => a.id - b.id)
+        setProduct(sorted)
+      })
   }
-  fetch(`${URL}/${item.id}`, postrequestOptions)
-    .then(r => r.json())
-    .then(j => {
-      console.log(j)
-      //let newarray=product.filter((e)=>e.id!==item.id)
-     //setProduct([...newarray,j]);
-    })
-}
   return (
     <div className="app">
       <NavBar />
       <div className="row">
         <div className="col-8 ">
-          <AllProducts 
-          product={product} 
-          removefromStock={removefromStock} 
-          changeAvailability={markasOutofStock} 
-          updateOldProduct={updateOldProduct}
+          <AllProducts
+            product={product}
+            removefromStock={removefromStock}
+            changeAvailability={markasOutofStock}
+            updateOldProduct={updateOldProduct}
           />
         </div>
         <div className="col-4 l-0">

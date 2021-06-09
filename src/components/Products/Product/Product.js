@@ -4,7 +4,7 @@ import "./stylingHead.css"
 
 function Product({ product, removefromStock, changeAvailability, updateOldProduct }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [updateData,setUpdateData]=useState(null)
+  const [updateData, setUpdateData] = useState(null)
 
   function removeItem(e) {
     e.preventDefault()
@@ -41,24 +41,23 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
         <a className="card-text" target="blank" href={product.product_url}>See more Details.... </a>
         <button className="btn btn-danger" onClick={removeItem}>Remove</button>
         <div className="rigtBox">
-          {product.isInMarket ? <a href="#" className="btn btn-warning" onClick={changeAvailabilityofItem}>Mark as Out Of Stock</a> : 
-          <a className="btn btn-secondary" onClick={togglePopup}>Re Stock</a>}
+          {product.isInMarket ? <a href="#" className="btn btn-warning" onClick={changeAvailabilityofItem}>Mark as Out Of Stock</a> :
+            <a className="btn btn-secondary" onClick={togglePopup}>Re Stock</a>}
         </div>
       </div>
-      </div>
+    </div>
 
-   <PopUp 
-   trigger={isOpen} 
-   togglePopup={togglePopup} 
-   product={product} 
-   updateData={updateData}
-   setUpdateData={setUpdateData}
-   updateOldProduct={updateOldProduct}
-   />
+    <PopUp
+      trigger={isOpen}
+      togglePopup={togglePopup}
+      updateData={updateData}
+      setUpdateData={setUpdateData}
+      updateOldProduct={updateOldProduct}
+    />
 
- 
 
-    
+
+
   </>
 }
 

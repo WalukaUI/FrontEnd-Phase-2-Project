@@ -4,6 +4,7 @@ import "./stylingHead.css"
 
 function Product({ product, removefromStock, changeAvailability }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [updateData,setUpdateData]=useState(null)
 
   function removeItem(e) {
     e.preventDefault()
@@ -15,6 +16,7 @@ function Product({ product, removefromStock, changeAvailability }) {
   }
   const togglePopup = () => {
     setIsOpen(!isOpen);
+    setUpdateData(product)
   }
   function categoryFilter() {
     if (product.product_master_category === "331") {
@@ -45,7 +47,7 @@ function Product({ product, removefromStock, changeAvailability }) {
       </div>
       </div>
 
-   <PopUp trigger={isOpen} togglePopup={togglePopup} product={product}>
+   <PopUp trigger={isOpen} togglePopup={togglePopup} product={product} updateData={updateData}setUpdateData={setUpdateData}>
 
    </PopUp>
 

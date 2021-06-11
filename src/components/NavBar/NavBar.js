@@ -1,6 +1,11 @@
 import "./navBar.css"
 
 function NavBar() {
+   function activeSearch(e){
+     e.preventDefault()
+     searchInDataBase(e.target.value)
+   }
+
   return (
 
     <nav className="navbar navbar-light bg-light">
@@ -12,10 +17,11 @@ function NavBar() {
       </div>
 
       <div className="line1">
-        <input className="form-control mr-sm-2 " type="text" placeholder="Search" />
+        <input className="form-control mr-sm-2 " type="text" placeholder="Search" onChange={activeSearch}/>
       </div>
       <div>
         <select className="form-select" aria-label="Default select example">
+        <option value="All">All</option>
           <option value="331">Electronic</option>
           <option value="333">Toys</option>
           <option value="334">Computer Parts</option>

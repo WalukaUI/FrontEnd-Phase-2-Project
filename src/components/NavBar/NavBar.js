@@ -1,11 +1,14 @@
 import "./navBar.css"
 
-function NavBar({searchInDataBase}) {
+function NavBar({searchInDataBase,setSearchCatergory}) {
    function activeSearch(e){
      e.preventDefault()
      searchInDataBase(e.target.value)
    }
-
+function cardsByCategory(e){
+  e.preventDefault()
+  setSearchCatergory(e.target.value)
+}
   return (
 
     <nav className="navbar navbar-light bg-light">
@@ -20,7 +23,7 @@ function NavBar({searchInDataBase}) {
         <input className="form-control mr-sm-2 " type="text" placeholder="Search" onChange={activeSearch}/>
       </div>
       <div>
-        <select className="form-select" aria-label="Default select example">
+        <select className="form-select" aria-label="Default select example" onChange={cardsByCategory}>
         <option value="All">All</option>
           <option value="331">Electronic</option>
           <option value="333">Toys</option>

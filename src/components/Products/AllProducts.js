@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../Products/allProducts.css"
 import Product from "./Product/Product"
 
-function AllProducts({ product, removefromStock, changeAvailability, updateOldProduct, serachTerm }) {
+function AllProducts({ product, removefromStock, changeAvailability, updateOldProduct, serachTerm ,serachCatergory}) {
   const [productIndex, setproductIndex] = useState(0);
 
   //function productComponents(){
@@ -22,6 +22,7 @@ function AllProducts({ product, removefromStock, changeAvailability, updateOldPr
 
     const productComponents = product
     .filter((e)=>e.product_name.toLowerCase().includes(serachTerm.toLowerCase()))
+    .filter((e)=>(serachCatergory==="All"?e:e.product_master_category.includes(serachCatergory)))
     .slice(productIndex, productIndex + 3)
     .map((e) =><Product 
     key={e.id} 

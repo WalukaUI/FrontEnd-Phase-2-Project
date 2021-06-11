@@ -6,6 +6,8 @@ import Form from "./Form/Form"
 function Main() {
   const [product, setProduct] = useState([])
   const [serachTerm,setSearchtearm]=useState("")
+  const [serachCatergory,setSearchCatergory]=useState("All")
+
   const URL = "http://localhost:3000/products"
 
   useEffect(() => {
@@ -85,12 +87,13 @@ function Main() {
         setProduct(sorted)
       })
   }
-  function searchInDataBase(cardName){
-    setSearchtearm(cardName)
-  }
+
   return (
     <div className="app">
-      <NavBar searchInDataBase={searchInDataBase}/>
+      <NavBar 
+      searchInDataBase={setSearchtearm}
+      setSearchCatergory={setSearchCatergory}
+      />
       <div className="row">
         <div className="col-8 ">
           <AllProducts
@@ -99,6 +102,7 @@ function Main() {
             changeAvailability={markasOutofStock}
             updateOldProduct={updateOldProduct}
             serachTerm={serachTerm}
+            serachCatergory={serachCatergory}
           />
         </div>
         <div className="col-4 l-0">

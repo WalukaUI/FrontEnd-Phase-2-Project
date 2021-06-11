@@ -5,6 +5,7 @@ import Form from "./Form/Form"
 
 function Main() {
   const [product, setProduct] = useState([])
+  const [serachTerm,setSearchtearm]=useState("")
   const URL = "http://localhost:3000/products"
 
   useEffect(() => {
@@ -85,7 +86,7 @@ function Main() {
       })
   }
   function searchInDataBase(cardName){
-    console.log(cardName);
+    setSearchtearm(cardName)
   }
   return (
     <div className="app">
@@ -97,6 +98,7 @@ function Main() {
             removefromStock={removefromStock}
             changeAvailability={markasOutofStock}
             updateOldProduct={updateOldProduct}
+            serachTerm={serachTerm}
           />
         </div>
         <div className="col-4 l-0">

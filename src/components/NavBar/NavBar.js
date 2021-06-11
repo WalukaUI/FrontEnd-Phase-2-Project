@@ -22,7 +22,8 @@ function cardsByCategory(e){
       <div className="line1">
         <input className="form-control mr-sm-2 " type="text" placeholder="Search" onChange={activeSearch}/>
       </div>
-      <div>
+      <div className="line2">
+        <p>Display Category </p>
         <select className="form-select" aria-label="Default select example" onChange={cardsByCategory}>
         <option value="All">All</option>
           <option value="331">Electronic</option>
@@ -30,9 +31,6 @@ function cardsByCategory(e){
           <option value="334">Computer Parts</option>
           <option value="332">Other</option>
         </select>
-      </div>
-      <div className="line2">
-        <button className="btn btn-success " type="submit">Search</button>
       </div>
 
     </nav>

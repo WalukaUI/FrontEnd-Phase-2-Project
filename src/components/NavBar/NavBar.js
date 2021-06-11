@@ -1,6 +1,6 @@
 import "./navBar.css"
 
-function NavBar() {
+function NavBar({searchInDataBase}) {
    function activeSearch(e){
      e.preventDefault()
      searchInDataBase(e.target.value)

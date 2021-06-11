@@ -84,9 +84,12 @@ function Main() {
         setProduct(sorted)
       })
   }
+  function searchInDataBase(cardName){
+    console.log(cardName);
+  }
   return (
     <div className="app">
-      <NavBar />
+      <NavBar searchInDataBase={searchInDataBase}/>
       <div className="row">
         <div className="col-8 ">
           <AllProducts

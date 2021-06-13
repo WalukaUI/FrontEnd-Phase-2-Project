@@ -1,4 +1,5 @@
 import "./navBar.css"
+import heading from "../NavBar/inventory manager.jpg"
 
 function NavBar({searchInDataBase,setSearchCatergory,setviewChanger}) {
    function activeSearch(e){
@@ -15,6 +16,7 @@ function cardsByCategory(e){
       <div >
         <a className="navbar-brand " href="#">
           <img src="https://media.giphy.com/media/eM7h2gN2uvNVzzw1jA/giphy.gif" alt="logo"  className="logo" />
+          <img src={heading} alt="logo"  />
 
         </a>
       </div>

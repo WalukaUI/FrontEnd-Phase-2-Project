@@ -1,12 +1,19 @@
 
-.navbar img {
+.logo {
     height: 70px;
     padding-left: 20px;
 } 
 .line1{
-    margin-left: 30%;
-    float: right;
+    margin-left: 20%;
+    /* float: right; */
 }
 .line2{
-    margin-right: 10%;
+    text-align: center;
+    margin-right: 5%;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, #d6dadd, #ebf0f3);
+}
+.selector{
+    width: 200px;
+    margin: 20px;
 }

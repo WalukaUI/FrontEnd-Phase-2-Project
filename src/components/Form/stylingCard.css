@@ -2,10 +2,11 @@
   margin-top: 20px;
   margin-right: 10px;
   float: right;
-  background-color: rgb(250, 239, 239);
+  background-color: #ecf0f3;
   padding:30px;
   border-radius: 5px;
   border:5px black;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
 label{
   margin: 10px;

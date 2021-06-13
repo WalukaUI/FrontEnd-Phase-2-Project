@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import AllProducts from "./Products/AllProducts"
 import NavBar from "./NavBar/NavBar"
 import Form from "./Form/Form"
+import image from "../hand-painted-watercolor-background-with-sky-clouds-shape.jpg"
+
 
 function Main() {
-  const [product, setProduct] = useState([])
+  const [product, setProduct] = useState(null)
   const [serachTerm,setSearchtearm]=useState("")
   const [serachCatergory,setSearchCatergory]=useState("All")
 
@@ -89,7 +91,9 @@ function Main() {
   }
 
   return (
-    <div className="app">
+    <div className="app" style={{ 
+      backgroundImage: `url(${image})` 
+    }}>
       <NavBar 
       searchInDataBase={setSearchtearm}
       setSearchCatergory={setSearchCatergory}

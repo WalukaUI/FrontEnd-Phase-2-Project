@@ -30,13 +30,9 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
     }
   }
 
-  function gotocard(e){
-    e.preventDefault()
-    //openCard(product)
-  }
   return viewChanger?<>
   <div className={product.isInMarket ? "card" : "card disable"} >
-  <div className="card-header cardHead" onClick={gotocard}>
+  <div className="card-header cardHead" >
     {product.product_name}
   </div>
   <div className="card-body">
@@ -60,9 +56,13 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
   updateOldProduct={updateOldProduct}
 /> 
 </>:<>
+
 <div className={product.isInMarket ?"card gridView":"card gridView disable"}>
 <img src={product.product_image} alt="product" />
   <div className="card-body">
+  <div className="card-header cardHead" >
+    {product.product_name}
+  </div>
   <h5 className="card-title">Availability: {product.product_stock}</h5>
   <p>Category: {categoryFilter()}</p>
     <a className="card-text" target="blank" href={product.product_url}>See more Details.... </a>
@@ -75,6 +75,13 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
     
   </div>
 </div>
+<PopUp
+  trigger={isOpen}
+  togglePopup={togglePopup}
+  updateData={updateData}
+  setUpdateData={setUpdateData}
+  updateOldProduct={updateOldProduct}
+/> 
 </>
 
   

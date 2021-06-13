@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
+import "./singleProduct.css"
 
 const URL = "http://localhost:3000/products"
 
@@ -13,14 +14,36 @@ function ProductDetail() {
             .then(data => setsingleProduct(data))
     }, [params.id])
     
-    if (!singleProduct) return <h2>Loading...</h2>
+    if (!singleProduct) return <div className="d-flex justify-content-center mt-5 mb-5">
+    <div className="spinner-border text-danger" role="status">
+      <span className="sr-only"></span>
+    </div>
+    <div className="row text-center" >
+      <h3>Loading...</h3>
+    </div>
+  </div>
+
+function categoryFilter() {
+  if (singleProduct.product_master_category === "331") {
+    return "Electronic"
+  } else if (singleProduct.product_master_category === "334") {
+    return "Computer Parts"
+  } else if (singleProduct.product_master_category === "333") {
+    return "Toys"
+  } else {
+    return "Other"
+  }
+}
     
     
     return (<>
  <div className="card" >
   <img className="card-img-top" src={singleProduct.product_image} alt="Card image cap"/>
   <div className="card-body">
-    <h5 className="card-title">Card title</h5>
+    <h5 className="card-title">{singleProduct.product_name}</h5>
+    <p>Category: {categoryFilter()}</p>
+    <p>Availability: {singleProduct.product_stock}</p>
+    <p>Availability: {singleProduct.product_shipping_weight?singleProduct.product_shipping_weight:"Not Available"}</p>
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" className="btn btn-primary">Go somewhere</a>
   </div>

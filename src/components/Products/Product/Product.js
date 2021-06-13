@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PopUp from '../Product/PopUp';
 import "./stylingHead.css"
+import { Link } from "react-router-dom";
 
 function Product({ product, removefromStock, changeAvailability, updateOldProduct,viewChanger }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +37,11 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
 
   return viewChanger?<>
   <div className={product.isInMarket ? "card" : "card disable"} >
+  <Link to={`/products/${product.id}`}>
   <div className="card-header cardHead" >
     {product.product_name}
   </div>
+  </Link>
   <div className="card-body">
     <img src={product.product_image} className="listimg" alt="product" />
     <h5 className="card-title">Availability: {product.product_stock}</h5>

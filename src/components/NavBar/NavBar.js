@@ -1,4 +1,5 @@
 import "./navBar.css"
+import { Link } from "react-router-dom"
 import heading from "../NavBar/inventory manager.jpg"
 
 function NavBar({searchInDataBase,setSearchCatergory,setviewChanger}) {
@@ -14,7 +15,8 @@ function cardsByCategory(e){
 
     <nav className="navbar navbar-light bg-light">
       <div >
-      <button className="btn btn-info">Home</button>
+        <Link exact to="/"><button className="btn btn-info">Home</button></Link>
+      
         <a className="navbar-brand " href="#">
           <img src="https://media.giphy.com/media/eM7h2gN2uvNVzzw1jA/giphy.gif" alt="logo"  className="logo" />
           <img src={heading} alt="logo"  />

@@ -4,6 +4,7 @@ import NavBar from "./NavBar/NavBar"
 import Form from "./Form/Form"
 import { Switch, Route } from "react-router-dom";
 import image from "../hand-painted-watercolor-background-with-sky-clouds-shape.jpg"
+import ProductDetail from "./SingleProduct/SingleProduct"
 
 
 function Main() {
@@ -106,7 +107,10 @@ function Main() {
       <div className="row">
         <div className="col-8 ">
         <Switch>
-        <Route exact path="/home">
+        <Route path="/products/:id">
+             <ProductDetail/>
+        </Route>
+        <Route path="/">
           <AllProducts
             product={product}
             removefromStock={removefromStock}

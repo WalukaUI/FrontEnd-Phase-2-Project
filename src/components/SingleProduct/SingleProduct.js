@@ -15,21 +15,17 @@ function ProductDetail() {
     
     if (!singleProduct) return <h2>Loading...</h2>
     
-   function singleProductCard() {
-       let all=singleProduct.map((e)=><div>
-           <span key={e.product_name}>{e.product_name}</span>
-                  <h1>{e.product_name}</h1>
-                  <p>{e.product_name}</p>
-            <div>{e.product_name}</div>
-       </div>)
-       return all
-   }
-
     
-    return (
-        <section>
-            {singleProductCard}
-        </section>
+    return (<>
+ <div className="card" >
+  <img className="card-img-top" src={singleProduct.product_image} alt="Card image cap"/>
+  <div className="card-body">
+    <h5 className="card-title">Card title</h5>
+    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" className="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+            </>
     );
 }
 

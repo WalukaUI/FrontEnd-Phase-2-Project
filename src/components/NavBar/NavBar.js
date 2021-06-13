@@ -15,7 +15,7 @@ function cardsByCategory(e){
 
     <nav className="navbar navbar-light bg-light">
       <div >
-        <Link exact to="/"><button className="btn btn-info">Home</button></Link>
+        <Link to="/"><button className="btn btn-info">Home</button></Link>
       
         <a className="navbar-brand " href="#">
           <img src="https://media.giphy.com/media/eM7h2gN2uvNVzzw1jA/giphy.gif" alt="logo"  className="logo" />

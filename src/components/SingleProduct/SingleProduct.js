@@ -37,15 +37,18 @@ function categoryFilter() {
     
     
     return (<>
- <div className="card" >
+ <div className="card singleCard" >
   <img className="card-img-top" src={singleProduct.product_image} alt="Card image cap"/>
   <div className="card-body">
     <h5 className="card-title">{singleProduct.product_name}</h5>
+    <h3>Price: ${singleProduct.product_price}</h3>
     <p>Category: {categoryFilter()}</p>
     <p>Availability: {singleProduct.product_stock}</p>
-    <p>Availability: {singleProduct.product_shipping_weight?singleProduct.product_shipping_weight:"Not Available"}</p>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
+    <p>Shipping Weight: {singleProduct.product_shipping_weight?singleProduct.product_shipping_weight:"Not Available"}Kg</p>
+    <p>Product MPN: {singleProduct.product_mpn?singleProduct.product_mpn:"Not Available"}</p>
+    <a href={singleProduct.product_url}>Click here to See more about this Product...</a>
+    
+    
   </div>
 </div>
             </>

@@ -13,8 +13,8 @@ function Main() {
   const [serachCatergory, setSearchCatergory] = useState("All")
   const [viewChanger, setviewChanger] = useState(true)
 
-
-  const URL = "http://localhost:3000/products"
+  const URL="https://phase-ii-inventory-database.herokuapp.com/products"
+  //const URL = "http://localhost:3000/products"
 
   useEffect(() => {
     let getrequestOptions = {

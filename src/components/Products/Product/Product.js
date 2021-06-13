@@ -77,7 +77,7 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
 
         <div className="right">
           <button className="btn btn-danger cardbutton" onClick={removeItem}>Remove</button>
-          {product.isInMarket ? <a className="btn btn-warning" onClick={changeAvailabilityofItem}>Mark as Out Of Stock</a> :
+          {product.isInMarket ? <a className="btn btn-warning " onClick={changeAvailabilityofItem}>Mark as Out Of Stock</a> :
             <a className="btn btn-secondary" onClick={togglePopup}>Re Stock</a>}
         </div>
       </div>

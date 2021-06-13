@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import "../Product/popup.css"
 
 function PopUp({ trigger, togglePopup, updateData, setUpdateData,updateandClosePopup }) {

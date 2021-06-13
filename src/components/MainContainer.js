@@ -9,10 +9,10 @@ import ProductDetail from "./SingleProduct/SingleProduct"
 
 function Main() {
   const [product, setProduct] = useState(null)
-  const [serachTerm,setSearchtearm]=useState("")
-  const [serachCatergory,setSearchCatergory]=useState("All")
-  const [viewChanger,setviewChanger]=useState(true)
-  const [page, setPage] = useState("/")
+  const [serachTerm, setSearchtearm] = useState("")
+  const [serachCatergory, setSearchCatergory] = useState("All")
+  const [viewChanger, setviewChanger] = useState(true)
+
 
   const URL = "http://localhost:3000/products"
 
@@ -95,41 +95,41 @@ function Main() {
   }
 
   return (<main>
-    <div className="app" style={{ 
-      backgroundImage: `url(${image})` 
+    <div className="app" style={{
+      backgroundImage: `url(${image})`
     }}>
-      <NavBar 
-      searchInDataBase={setSearchtearm}
-      setSearchCatergory={setSearchCatergory}
-      setviewChanger={setviewChanger}
+      <NavBar
+        searchInDataBase={setSearchtearm}
+        setSearchCatergory={setSearchCatergory}
+        setviewChanger={setviewChanger}
       />
 
       <div className="row">
         <div className="col-8 ">
-        <Switch>
-        <Route path="/products/:id">
-             <ProductDetail/>
-        </Route>
-        <Route path="/">
-          <AllProducts
-            product={product}
-            removefromStock={removefromStock}
-            changeAvailability={markasOutofStock}
-            updateOldProduct={updateOldProduct}
-            serachTerm={serachTerm}
-            serachCatergory={serachCatergory}
-            viewChanger={viewChanger}
-          />
-        </Route>
-      </Switch>
-          
+          <Switch>
+            <Route path="/products/:id">
+              <ProductDetail />
+            </Route>
+            <Route path="/">
+              <AllProducts
+                product={product}
+                removefromStock={removefromStock}
+                changeAvailability={markasOutofStock}
+                updateOldProduct={updateOldProduct}
+                serachTerm={serachTerm}
+                serachCatergory={serachCatergory}
+                viewChanger={viewChanger}
+              />
+            </Route>
+          </Switch>
+
         </div>
         <div className="col-4 l-0">
           <Form createNewProduct={createNewProduct} />
         </div>
       </div>
     </div>
-    </main>
+  </main>
   )
 }
 

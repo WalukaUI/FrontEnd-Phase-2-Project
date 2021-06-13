@@ -25,6 +25,10 @@ h1{
 .hide{
   display: none;
 }
+.cardHead{
+  color: rgb(19, 13, 7);
+  text-decoration:none;
+}
 .cardHead:hover {
   background: #3cb0fd;
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);

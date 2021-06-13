@@ -40,7 +40,7 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
     {product.product_name}
   </div>
   <div className="card-body">
-    <img src={product.product_image} alt="product" />
+    <img src={product.product_image} className="listimg" alt="product" />
     <h5 className="card-title">Availability: {product.product_stock}</h5>
     <p>Category: {categoryFilter()}</p>
     <a className="card-text" target="blank" href={product.product_url}>See more Details.... </a>
@@ -60,14 +60,15 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
   updateOldProduct={updateOldProduct}
 /> 
 </>:<>
-<div className="card gridView">
+<div className={product.isInMarket ?"card gridView":"card gridView disable"}>
 <img src={product.product_image} alt="product" />
   <div className="card-body">
   <h5 className="card-title">Availability: {product.product_stock}</h5>
   <p>Category: {categoryFilter()}</p>
     <a className="card-text" target="blank" href={product.product_url}>See more Details.... </a>
-    <button className="btn btn-danger" onClick={removeItem}>Remove</button>
-    <div className="rigtBox">
+    
+    <div className="right">
+    <button className="btn btn-danger cardbutton" onClick={removeItem}>Remove</button>
       {product.isInMarket ? <a href="#" className="btn btn-warning" onClick={changeAvailabilityofItem}>Mark as Out Of Stock</a> :
         <a className="btn btn-secondary" onClick={togglePopup}>Re Stock</a>}
     </div>

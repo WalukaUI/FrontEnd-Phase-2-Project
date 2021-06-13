@@ -94,7 +94,8 @@ function Main() {
       })
   }
 
-  return (<main>
+  return (
+  <main>
     <div className="app" style={{
       backgroundImage: `url(${image})`
     }}>
@@ -103,9 +104,9 @@ function Main() {
         setSearchCatergory={setSearchCatergory}
         setviewChanger={setviewChanger}
       />
-
+     <div className="cont">
       <div className="row">
-        <div className="col-8 ">
+        <div className="col-lg-8 col-md-12">
           <Switch>
             <Route path="/products/:id">
               <ProductDetail />
@@ -124,9 +125,10 @@ function Main() {
           </Switch>
 
         </div>
-        <div className="col-4 l-0">
+        <div className="col-lg-4 col-md-12">
           <Form createNewProduct={createNewProduct} />
         </div>
+      </div>
       </div>
     </div>
   </main>

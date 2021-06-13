@@ -1,19 +1,26 @@
 
 .logo {
-    height: 70px;
-    padding-left: 20px;
+    height: 64px;
+    padding-left: 20px; 
 } 
- /* .line1{
-     margin-left: 10%; 
-     float: right;  */
- 
+
+.navbarpadding{
+    padding-right: 10px;
+}
+.line1{
+    margin-top: 20px;  
+}
 .line2{
+    float: right;
     text-align: center;
-    margin-right: 5%;
-    border-radius: 10px;
-    background-image: linear-gradient(to bottom, #d6dadd, #ebf0f3);
+    background-image: linear-gradient(to bottom, #a3c6e0, #ebf0f3);
 }
 .selector{
-    width: 200px;
-    margin: 8px;
+    margin: 5px;
+}
+.divBg{
+    background-image: linear-gradient(to bottom, #a3c6e0, #ebf0f3);
+}
+.gridbtn{
+    margin-left: 10px;
 }

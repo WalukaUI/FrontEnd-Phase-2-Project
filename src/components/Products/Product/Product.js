@@ -63,7 +63,6 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
       updateandClosePopup={updateandClosePopup}
     />
   </> : <>
-
     <div className={product.isInMarket ? "card gridView" : "card gridView disable"}>
       <img src={product.product_image} alt="product" />
       <div className="card-body">

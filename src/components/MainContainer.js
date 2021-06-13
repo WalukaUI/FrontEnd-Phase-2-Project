@@ -9,6 +9,7 @@ function Main() {
   const [product, setProduct] = useState(null)
   const [serachTerm,setSearchtearm]=useState("")
   const [serachCatergory,setSearchCatergory]=useState("All")
+  const [viewChanger,setviewChanger]=useState(true)
 
   const URL = "http://localhost:3000/products"
 
@@ -97,6 +98,7 @@ function Main() {
       <NavBar 
       searchInDataBase={setSearchtearm}
       setSearchCatergory={setSearchCatergory}
+      setviewChanger={setviewChanger}
       />
       <div className="row">
         <div className="col-8 ">
@@ -107,6 +109,7 @@ function Main() {
             updateOldProduct={updateOldProduct}
             serachTerm={serachTerm}
             serachCatergory={serachCatergory}
+            viewChanger={viewChanger}
           />
         </div>
         <div className="col-4 l-0">

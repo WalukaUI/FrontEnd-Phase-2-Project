@@ -22,3 +22,12 @@ img{
 .hide{
   display: none;
 }
+.cardHead:hover {
+  background: #3cb0fd;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+  cursor: pointer;
+}
+.gridView{
+  width: 18rem;
+}

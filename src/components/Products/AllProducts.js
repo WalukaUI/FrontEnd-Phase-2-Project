@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../Products/allProducts.css"
 import Product from "./Product/Product"
 
-function AllProducts({ product, removefromStock, changeAvailability, updateOldProduct, serachTerm, serachCatergory }) {
+function AllProducts({ product, removefromStock, changeAvailability, updateOldProduct, serachTerm, serachCatergory,viewChanger }) {
   const [productIndex, setproductIndex] = useState(0);
 
   //function productComponents(){
@@ -30,6 +30,7 @@ function AllProducts({ product, removefromStock, changeAvailability, updateOldPr
       removefromStock={removefromStock}
       changeAvailability={changeAvailability}
       updateOldProduct={updateOldProduct}
+      viewChanger={viewChanger}
     />) : <div className="d-flex justify-content-center mt-5 mb-5">
     <div className="spinner-border text-danger" role="status">
       <span className="sr-only"></span>

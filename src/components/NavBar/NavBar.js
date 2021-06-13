@@ -1,6 +1,6 @@
 import "./navBar.css"
 
-function NavBar({searchInDataBase,setSearchCatergory}) {
+function NavBar({searchInDataBase,setSearchCatergory,setviewChanger}) {
    function activeSearch(e){
      e.preventDefault()
      searchInDataBase(e.target.value)
@@ -12,13 +12,14 @@ function cardsByCategory(e){
   return (
 
     <nav className="navbar navbar-light bg-light">
-      <div>
+      <div >
         <a className="navbar-brand " href="#">
           <img src="https://media.giphy.com/media/eM7h2gN2uvNVzzw1jA/giphy.gif" alt="" width="30" height="24" className="d-inline-block align-text-top" />
 
         </a>
       </div>
-
+       <button onClick={()=>setviewChanger(true)}>List View</button>
+       <button onClick={()=>setviewChanger(false)}>Grid View</button>
       <div className="line1">
         <input className="form-control mr-sm-2 " type="text" placeholder="Search" onChange={activeSearch}/>
       </div>

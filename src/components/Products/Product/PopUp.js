@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../Product/popup.css"
 
-function PopUp({ trigger, togglePopup, updateData, setUpdateData,updateOldProduct }) {
+function PopUp({ trigger, togglePopup, updateData, setUpdateData,updateandClosePopup }) {
 
 
     function handleChangeData(e) {
@@ -11,7 +11,7 @@ function PopUp({ trigger, togglePopup, updateData, setUpdateData,updateOldProduc
     }
     function updateproduct(e){
         e.preventDefault()
-        updateOldProduct(updateData)
+        updateandClosePopup(updateData)
     }
     if (!updateData) return null
     const editProduct = updateData

@@ -14,6 +14,10 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
     e.preventDefault()
     changeAvailability(product)
   }
+  function updateandClosePopup(item){
+    updateOldProduct(item)
+    setIsOpen(!isOpen)
+  }
   const togglePopup = () => {
     setIsOpen(!isOpen);
     setUpdateData(product)
@@ -53,7 +57,7 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
   togglePopup={togglePopup}
   updateData={updateData}
   setUpdateData={setUpdateData}
-  updateOldProduct={updateOldProduct}
+  updateandClosePopup={updateandClosePopup}
 /> 
 </>:<>
 
@@ -80,7 +84,7 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
   togglePopup={togglePopup}
   updateData={updateData}
   setUpdateData={setUpdateData}
-  updateOldProduct={updateOldProduct}
+  updateandClosePopup={updateandClosePopup}
 /> 
 </>
 

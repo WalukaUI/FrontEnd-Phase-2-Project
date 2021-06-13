@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import AllProducts from "./Products/AllProducts"
 import NavBar from "./NavBar/NavBar"
 import Form from "./Form/Form"
+import { Switch, Route } from "react-router-dom";
 import image from "../hand-painted-watercolor-background-with-sky-clouds-shape.jpg"
 
 
@@ -10,6 +11,7 @@ function Main() {
   const [serachTerm,setSearchtearm]=useState("")
   const [serachCatergory,setSearchCatergory]=useState("All")
   const [viewChanger,setviewChanger]=useState(true)
+  const [page, setPage] = useState("/")
 
   const URL = "http://localhost:3000/products"
 
@@ -91,7 +93,7 @@ function Main() {
       })
   }
 
-  return (
+  return (<main>
     <div className="app" style={{ 
       backgroundImage: `url(${image})` 
     }}>
@@ -100,8 +102,11 @@ function Main() {
       setSearchCatergory={setSearchCatergory}
       setviewChanger={setviewChanger}
       />
+
       <div className="row">
         <div className="col-8 ">
+        <Switch>
+        <Route exact path="/home">
           <AllProducts
             product={product}
             removefromStock={removefromStock}
@@ -111,12 +116,16 @@ function Main() {
             serachCatergory={serachCatergory}
             viewChanger={viewChanger}
           />
+        </Route>
+      </Switch>
+          
         </div>
         <div className="col-4 l-0">
           <Form createNewProduct={createNewProduct} />
         </div>
       </div>
     </div>
+    </main>
   )
 }
 

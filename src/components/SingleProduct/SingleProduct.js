@@ -34,7 +34,7 @@ function ProductDetail() {
       return "Other"
     }
   }
-
+  
 
   return (<>
     <div className="card singleCard" >

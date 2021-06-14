@@ -34,7 +34,7 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
       return "Other"
     }
   }
-
+  
   return viewChanger ? <>
     <div className={product.isInMarket ? "card" : "card disable"} >
       <Link to={`/products/${product.id}`}>
@@ -76,7 +76,7 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
         <h5>Price: ${product.product_price}</h5>
 
         <div className="right">
-          <button className="btn btn-danger cardbutton" onClick={removeItem}>Remove</button>
+          <button className="btn btn-danger cardbutton"  onClick={removeItem}>Remove</button>
           {product.isInMarket ? <a className="btn btn-warning " href="#top" onClick={changeAvailabilityofItem}>Mark as Out Of Stock</a> :
             <a className="btn btn-secondary" href="#top" onClick={togglePopup}>Re Stock</a>}
         </div>

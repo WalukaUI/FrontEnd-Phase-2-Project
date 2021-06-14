@@ -1,5 +1,8 @@
 .singleCard{
-    width: 25rem;
-    float: inherit;
-    margin-left: 23%;
+    /* width: 25rem; */
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
 }

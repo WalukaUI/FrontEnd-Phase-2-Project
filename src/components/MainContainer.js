@@ -62,7 +62,7 @@ function Main() {
           setProduct(newProductList)
         })
     } else {
-      alert("Reached minimum limit of products, Cannot Delete")
+      alert("Reached minimum limit of products, Cannot Delete. Add a product to delete")
     }
   }
   function markasOutofStock(item) {

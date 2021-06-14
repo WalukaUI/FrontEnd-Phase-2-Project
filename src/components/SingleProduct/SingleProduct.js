@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import "./singleProduct.css"
 
-//const URL="https://phase-ii-inventory-database.herokuapp.com/products"
-const URL="http://localhost:3000/products"
+const URL="https://phase-ii-inventory-database.herokuapp.com/products"
+//const URL="http://localhost:3000/products"
 
 function ProductDetail() {
   const [singleProduct, setsingleProduct] = useState(null);

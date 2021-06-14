@@ -11,6 +11,7 @@ h1{
   overflow: hidden;
 }
 .card-image{
+  margin-left: 15px;
   max-width:100%;
   max-height:100%;
   transform:scale(1);
@@ -50,6 +51,11 @@ transform: scale(1.17);
   color: rgb(19, 13, 7);
   text-decoration:none;
 }
+.gridcardHead{
+  color: rgb(19, 13, 7);
+  text-decoration:none;
+  background-color: rgb(241, 247, 236);
+}
 .cardHead:hover {
   background: #3cb0fd;
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
@@ -60,9 +66,18 @@ transform: scale(1.17);
   width: 15rem;
   text-align: center;
 }
-.mainGrid{
+.gridmaindiv{
   text-align: center;
-  display: grid;
-  grid-template-columns: 32% 32% 32%;
-  grid-gap: 1.5em;
+  display: inline-flex;
+  overflow:inherit;
 }
+.innerDiv{
+  display: block;
+  width: 15rem;
+}
+.gridWarningBtn{
+  margin-top: 10px;
+}
+ .gridbtns{
+  margin-top: 10px;
+} 

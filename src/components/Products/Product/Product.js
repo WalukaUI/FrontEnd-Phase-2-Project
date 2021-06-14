@@ -63,27 +63,29 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
       updateandClosePopup={updateandClosePopup}
     />
   </> : <>
-    <div className={product.isInMarket ? "card shadow gridView gridmaindiv" : "card gridView disable"}>
-      <div className="overflowGridImg">
-      <img src={product.product_image} className="card-image" alt="product" />
-      </div>
+  <div className={product.isInMarket ? "card shadow gridmaindiv col-lg-3" : "card shadow gridmaindiv disable"} >
+  <div className="innerDiv">
+      <Link to={`/products/${product.id}`}>
+        <div className="card-header gridcardHead " >
+          {product.product_name}
+        </div>
+      </Link>
       <div className="card-body">
-        <Link to={`/products/${product.id}`}>
-          <div className="card-header cardHead" >
-            {product.product_name}
-          </div>
-        </Link>
+      <div className="overflowGridImg">
+        <img src={product.product_image} className="listimg card-image" alt="product" />
+       </div>
         <h5 className="card-title">Availability: {product.product_stock}</h5>
         <p>Category: {categoryFilter()}</p>
         <h5>Price: ${product.product_price}</h5>
-
-        <div className="right">
-          <button className="btn btn-danger cardbutton"  onClick={removeItem}>Remove</button>
-          {product.isInMarket ? <a className="btn btn-warning " href="#top" onClick={changeAvailabilityofItem}>Mark as Out Of Stock</a> :
+        <button className="btn btn-danger" onClick={removeItem}>Remove</button>
+        <div className="gridbtns">
+          {product.isInMarket ? <a href="#top" className="btn btn-warning gridWarningBtn"  onClick={changeAvailabilityofItem}>Mark as Out Of Stock</a> :
             <a className="btn btn-secondary" href="#top" onClick={togglePopup}>Re Stock</a>}
         </div>
       </div>
+      </div>
     </div>
+
     <PopUp
       trigger={isOpen}
       togglePopup={togglePopup}

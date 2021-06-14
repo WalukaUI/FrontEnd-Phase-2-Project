@@ -36,14 +36,14 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
   }
   
   return viewChanger ? <>
-    <div className={product.isInMarket ? "card" : "card disable"} >
+    <div className={product.isInMarket ? "card shadow " : "card  disable"} >
       <Link to={`/products/${product.id}`}>
-        <div className="card-header cardHead" >
+        <div className="card-header cardHead " >
           {product.product_name}
         </div>
       </Link>
       <div className="card-body">
-        <img src={product.product_image} className="listimg" alt="product" />
+        <img src={product.product_image} className="listimg list-card-image" alt="product" />
         <h5 className="card-title">Availability: {product.product_stock}</h5>
         <p>Category: {categoryFilter()}</p>
         <h5>Price: ${product.product_price}</h5>
@@ -63,8 +63,10 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
       updateandClosePopup={updateandClosePopup}
     />
   </> : <>
-    <div className={product.isInMarket ? "card gridView" : "card gridView disable"}>
-      <img src={product.product_image} alt="product" />
+    <div className={product.isInMarket ? "card shadow gridView gridmaindiv" : "card gridView disable"}>
+      <div className="overflowGridImg">
+      <img src={product.product_image} className="card-image" alt="product" />
+      </div>
       <div className="card-body">
         <Link to={`/products/${product.id}`}>
           <div className="card-header cardHead" >

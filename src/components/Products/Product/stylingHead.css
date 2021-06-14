@@ -7,6 +7,25 @@ h1{
 .card{
   margin: 20px;
 }
+.overflowGridImg{
+  overflow: hidden;
+}
+.card-image{
+  max-width:100%;
+  max-height:100%;
+  transform:scale(1);
+  transition: transform 0.5s ease
+}
+.card-image:hover{
+  transform: scale(1.5);
+  }
+.list-card-image{
+  transform:scale(1);
+  transition: transform 0.5s ease
+}
+.list-card-image:hover{
+transform: scale(1.17);
+}
 .card-body{
   background-color: rgb(247, 251, 252);
 }

@@ -37,7 +37,7 @@ function ProductDetail() {
   
 
   return (<>
-    <div className="card singleCard" >
+    <div className="card" >
       <img className="card-img-top" src={singleProduct.product_image} alt="Cardimagecap" />
       <div className="card-body">
         <h5 className="card-title">{singleProduct.product_name}</h5>

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import PopUp from '../Product/PopUp';
 import "./stylingHead.css"
 import { Link } from "react-router-dom";
+import NextbackMessages from "./Popup Messages"
 
-function Product({ product, removefromStock, changeAvailability, updateOldProduct, viewChanger }) {
+function Product({ product, removefromStock, changeAvailability, updateOldProduct, viewChanger,setPopmessage,popmessage,message }) {
   const [isOpen, setIsOpen] = useState(false);
   const [updateData, setUpdateData] = useState(null)
+ 
 
   function removeItem(e) {
     e.preventDefault()
@@ -62,12 +64,17 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
       setUpdateData={setUpdateData}
       updateandClosePopup={updateandClosePopup}
     />
+    <NextbackMessages
+    message={message}
+    setPopmessage={setPopmessage}
+    popmessage={popmessage}
+    />
   </> : <>
-  <div className={product.isInMarket ? "card shadow gridmaindiv col-lg-3" : "card shadow gridmaindiv disable"} >
-  <div className="innerDiv">
+  <div className={product.isInMarket ? "card shadow gridmaindiv col-lg-3 text-center justify-content-center" : "card shadow gridmaindiv disable col-lg-3 text-center"} >
+  <div className="innerDiv ">
       <Link to={`/products/${product.id}`}>
-        <div className="card-header gridcardHead " >
-          {product.product_name}
+        <div className="card-header cardHead gridcardHead " >
+          {product.product_name.substring(0,40)}
         </div>
       </Link>
       <div className="card-body">
@@ -92,6 +99,11 @@ function Product({ product, removefromStock, changeAvailability, updateOldProduc
       updateData={updateData}
       setUpdateData={setUpdateData}
       updateandClosePopup={updateandClosePopup}
+    />
+    <NextbackMessages
+    message={message}
+    setPopmessage={setPopmessage}
+    popmessage={popmessage}
     />
   </>
 
